@@ -11,18 +11,9 @@ package model;
  */
 public class Team {
 
-    private int idTeam;
     private String nameTeam;
     private double probabilityAttac;
     private double probabilityDefense;
-
-    public int getIdTeam() {
-        return idTeam;
-    }
-
-    public void setIdTeam(int idTeam) {
-        this.idTeam = idTeam;
-    }
 
     public String getNameTeam() {
         return nameTeam;
