@@ -11,9 +11,19 @@ package model;
  */
 public class Team {
 
+    private int codeTeam;
     private String nameTeam;
     private double probabilityAttac;
     private double probabilityDefense;
+
+    public Team(int codeTeam, String nameTeam ) {
+        this.codeTeam = codeTeam;
+        this.nameTeam = nameTeam;       
+    }
+    
+    public void validate (Team team ){
+    
+    }
 
     public String getNameTeam() {
         return nameTeam;
@@ -37,5 +47,19 @@ public class Team {
 
     public void setProbabilityDefense(double probabilityDefense) {
         this.probabilityDefense = probabilityDefense;
+    }
+
+    /**
+     * @return the codeTeam
+     */
+    public int getCodeTeam() {
+        return codeTeam;
+    }
+
+    /**
+     * @param codeTeam the codeTeam to set
+     */
+    public void setCodeTeam(int codeTeam) {
+        this.codeTeam = codeTeam;
     }
 }
