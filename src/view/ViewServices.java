@@ -9,7 +9,7 @@ public class ViewServices {
     public String registrarEquipo(int idTeam, String nameTeam) {
 
         boolean controllerResult = false;
-        String message = "";
+        String message = "R";
         System.out.println("Ingrese el nùmero y nombre del equipo");
 
         this.newTeam.setIdTeam(idTeam);
