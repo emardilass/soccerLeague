@@ -15,10 +15,18 @@ public class Team {
     private String nameTeam;
     private double probabilityAttac;
     private double probabilityDefense;
+    private Player[] lineup;
 
     public Team(int codeTeam, String nameTeam ) {
         this.codeTeam = codeTeam;
-        this.nameTeam = nameTeam;       
+        this.nameTeam = nameTeam;
+        this.lineup = new Player[11];
+    }
+
+    public Team(int codeTeam, String nameTeam, Player[] lineup) {
+        this(codeTeam, nameTeam);
+        //TODO: [1] Validar que el arreglo que llegue tenga 11 jugadores, con la distribución para las formaciones: 4-4-2 y 3-4-3
+        this.lineup = lineup;
     }
     
     public void validate (Team team ){
