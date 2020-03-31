@@ -9,7 +9,7 @@ package model;
  *
  * @author Java11
  */
-public class Team {
+public class Team implements Storable{
 
     private int codeTeam;
     private String nameTeam;
