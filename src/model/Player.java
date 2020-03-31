@@ -1,6 +1,6 @@
 package model;
 
-public class Player {
+public class Player implements Storable{
     private String name;
     private Integer number;
     private String position; //TODO: [2] Estos deben ser: GK, DF, MF, FW.
