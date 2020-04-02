@@ -40,4 +40,19 @@ public class Player implements Storable{
     public String toString(){
         return "Name: " + this.getName() + "(" + this.getNumber() + ") - [" + this.getPosition() + "]";
     }
+
+    @Override
+    public boolean equals(Object o){
+
+        boolean answer = false;
+
+        if(o instanceof Player){
+            Player obj = (Player) o;
+            answer = (obj.getNumber().intValue() == this.getNumber().intValue()
+                && obj.getPosition().equals(this.getPosition())
+                && obj.getName().equals(this.getName()));
+        }
+
+        return answer;
+    }
 }
