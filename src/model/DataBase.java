@@ -29,17 +29,61 @@ public class DataBase {
         }
     }
 
+    public void remove(Storable e){
+        if (e instanceof Player){
+            this.jugadores.remove((Player)e);
+        }else if(e instanceof Team){
+            this.equipos.remove((Team)e);
+        }
+    }
 
-    public static void main(String... args){
-        DataBase db = new DataBase();
-        db.init();
+    public void removeAll(List<Storable> e){
+        for(Storable current : e){
+            save((Storable) current);
+        }
+    }
 
-        db.save(new Player("Pepe", 10, "GK"));
-        db.save(new Team(1, "Los Cósmicos"));
+    public void update(Storable e){
+
+        //TODO: [11] - Implementar esto DESPUÉS de implementar findById
+
+        if (e instanceof Player){
+            this.jugadores.set(1, (Player)e);
+        }else if(e instanceof Team){
+            this.equipos.set(1, (Team)e);
+        }
+    }
 
 
-        db.saveAll(Arrays.asList(new Player("Pepe", 10, "GK")));
+    /**
+     *
+     * @param e
+     * @return null en caso de no encontrar el elemento.
+     */
+    public Storable find (Storable e){
 
+        Storable result = null;
+        int index = -1;
+
+        if (e instanceof Player){
+            Player p = (Player)e;
+            index = this.jugadores.indexOf(p);
+            if(index >= 0){
+                result = this.jugadores.get(index);
+            }
+        }else if(e instanceof Team){
+            Team t = (Team)e;
+            index = this.equipos.indexOf(t);
+            if(index >= 0){
+                result = this.equipos.get(index);
+            }
+        }
+
+        return result;
+    }
+
+    public Storable findById(Storable e){
+        throw new UnsupportedOperationException("Not implemented yet"); //TODO: [10] - Borrar esta línea cuando vayan a empezar a codificar tu implementación.
     }
 
 }
